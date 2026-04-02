@@ -15,11 +15,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * Configuration property.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "name", "type", "required", "display", "validation", "valueDependants" })
+@JsonPropertyOrder({ "name", "type", "required", "default", "display", "validation", "valueDependants" })
 public record Property(
         @JsonProperty("name") String name,
         @JsonProperty("type") String type,
         @JsonProperty("required") Boolean required,
+        @JsonProperty("default") String defaultValue,
         @JsonProperty("display") Display display,
         @JsonProperty("validation") List<Validation> validation,
         @JsonProperty("valueDependants") List<ValueDependant> valueDependants) {
